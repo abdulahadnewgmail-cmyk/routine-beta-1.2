@@ -1,0 +1,65 @@
+.routine_section_container{
+  
+  
+}
+
+hr{
+  width: 90%;
+  border:1px solid #8DA9FF;
+  margin: 20px ;
+  
+}
+
+.routine_h1{
+  margin: 10px 0 2px 0;
+  color: #4855E4;
+  background: rgb(33, 38, 47);
+  position: absolute;
+  padding: 2px;
+}
+
+.routine_section{
+  display: flex;
+  width: 82vw;
+  overflow-x: scroll;
+  border-radius: 10px;
+  border-top: 2px solid blue;
+  box-shadow: 5px 0 10px white inset;
+  
+  
+  
+}
+
+.time_subject{
+  height: 100px;
+  flex: 0 0 10em;
+  background: #4B5AFF;
+  border-left: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.routine_time{
+  height: 20px;
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FF0000;
+  -webkit-text-stroke: 0.5px #FFDFFF;
+  text-decoration: underline;
+  
+}
+
+.routine_subject{
+  color: #fff;
+  font-weight: bolder ;
+  font-size: 1.5rem;
+  text-align: center;
+
+}
+
+.s{
+  background: linear-gradient(180deg, );
+  
+}

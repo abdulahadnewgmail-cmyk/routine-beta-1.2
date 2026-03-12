@@ -1,0 +1,252 @@
+sub {
+  font-size: 1rem;
+}
+
+body{
+  background: rgba(9, 9, 11, 1);
+  margin: 0;
+  width: 100vw;
+  height: 1000px;
+  
+}
+
+header{
+  background: #1B1A27;
+  position: fixed;
+  top: 0;
+  min-width: 300px;
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 0px 1px  black;
+  z-index: 100;
+}
+
+.app_name{
+  max-width: 400px;
+  text-wrap: nowrap;
+  line-height: 50px;
+  font-size: calc(2vw + 1rem);
+  font-weight: 900;
+  color: #4FEBFF;
+  text-align: center;
+  letter-spacing: calc(0.5vw);
+}
+
+.profile{
+  border-radius: 5px;
+  max-height: 40px;
+  display :flex;
+  gap: 20px;
+  align-items: center;
+/*  border: 1px solid white;*/
+  margin :5px 20px;
+  border: 2px solid #FFFFFF;
+  padding: 0 10px;
+}
+
+.menu{
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  font-weight: bold;
+  margin: 0 20px;
+  font-size: 1.5rem;
+  color: #84DFEF;
+  margin-bottom: 10px;
+  }
+  
+  a{
+    color: #84DFEF;
+  }
+  
+.profile_pic{
+  height: 40px;
+  width: 40px;
+  background: #84DFEF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 0px;
+  position: relative;
+  
+}
+
+.uid{
+  font-size: 1.2rem;
+  color: #E3E3E3;
+  font-family: monospace;
+  line-height: 50px;
+  font-weight: bold;
+  text-wrap: nowrap;
+
+}
+
+.demo_profile_pic{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:-10px;
+  font-size: 1.8rem;
+  
+  
+  
+}
+
+main{
+  display: flex;
+  width: 100%;
+  height:calc(100vh - 50px);
+  margin: 50px 0 0 0;
+  background: #252C36;
+  
+  
+}
+
+.sidebar{
+  width: 70px;
+  background: #252C36;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  
+}
+
+.content{
+  background: #21262F;
+  width: 100%;
+  margin-top: 20px;
+  border-top-left-radius: 15px;
+  box-shadow: 0 0 10px 1px inset;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  align-items: center;
+  row-gap: 20px;
+  padding-top: 20px;
+}
+
+.clock{
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-top: 20px;
+  text-wrap: nowrap;
+}
+
+.time_container{
+  display: flex;
+  width: 100%;
+  max-height: 120px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+
+.time{
+  background: linear-gradient(120deg, hsla(349, 100%, 45%, .9),hsla(349, 100%, 45%, .9), hsla(349, 100%, 55%, .9));
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, .2) inset, 0 0 10px 2px black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  align-items: center;
+  transition: opacity 100ms, scale 100ms;
+
+}
+
+.tt_text{
+  color: #fff;
+  font-size: 1.3rem;
+  display: inline-block;
+  align-self: flex-start;
+  margin: 10px;
+  
+}
+
+.tt_time {
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  margin:0 10px;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  
+}
+
+.total{
+  background: hsla(183, 100%, 40%, 0.9);
+}
+
+.starting_time{
+  display: flex;
+  width: 92%;
+  border-radius: 10px;
+  
+  overflow: hidden;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, .2) inset, 0 0 10px 2px black;
+  margin-top: 40px;
+  
+  
+}
+
+.starting_time_text{
+  max-width: 50px;
+  font-size: 1.2rem;
+  margin: 3px 5px;
+  text-align: center;
+  color: hsla(183, 0%, 100%, 0.9);
+}
+
+.time_input{
+  width: 50vw;
+  font-size: 1.8rem;
+  background: hsla(294, 10%, 20%, 1);
+  color: #fff;
+  
+}
+
+.tik{
+  flex-grow: 1;
+  border: none;
+  font-size: 2rem;
+  background: #21262F;
+  
+}
+
+.end{
+  width: 92%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, .2) inset, 0 0 10px 2px black;
+  background: hsla(300 , 80%, 45%, 0.9);
+  font-size: 1.6rem;
+  color: white;
+  font-weight: bold;
+}
+
+button{
+  transition: opacity 100ms, scale 100ms;
+}
+
+button:active, .time:active{
+  opacity: .8;
+  scale: 0.98;
+}
+
+@media (max-width: 500px) {
+  .profile{
+    letter-spacing: -2px;
+  }
+  .tt_time{
+    font-size: 1.3rem;
+  }
+  .app_name{
+    letter-spacing: -1px;
+  }
+}

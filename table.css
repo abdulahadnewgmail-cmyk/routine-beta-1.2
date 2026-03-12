@@ -1,0 +1,87 @@
+table{
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: calc(100vw - 50)px ;
+  border: 2px solid gray;
+}
+input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  margin: auto;
+  display: block;
+  outline: none;
+  text-align: center;
+  font-size: 1.4rem;
+}
+td{
+  overflow: hidden;
+  width: 90px;
+  height: 70px;
+  padding: 0;
+  border: 2px solid gray;
+  text-align: center;
+}
+th{
+  overflow: hidden;
+  width: 90px;
+  height: 70px;
+  padding: 0;
+  border: 2px solid black;
+  text-align: center;
+  background: #28FFF0;
+}
+.tableDayName{
+  background: #99FFD3;
+  width: 20px;
+  
+}
+.a510{
+  background: #95FFE4;
+  width: 20px;
+}
+.save_reset_routine{
+  background: #C2FFF0;
+  border-radius: 20px;
+  width: 80%;
+  height: 70px;
+  margin: 20px auto;
+  position: relative;
+}
+.save_routine{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 40%;
+  height: 50px;
+  border: none;
+  background: hsla(152, 100%, 56%, 1);
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  box-shadow: 2px 2px 5px hsla(165, 0%, 0%, .5), 1px 1px 5px hsla(165, 0%, 0%, .1) inset;
+
+}
+.reset_routine{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 35%;
+  height: 50px;
+  box-shadow: 2px 2px 5px hsla(165, 0%, 0%, .5);
+  border-radius: 20px;
+  background: hsla(309, 10%, 64%, 1);
+  border: none;
+  
+}
+p{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+a{
+  text-decoration: none;
+}
