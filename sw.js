@@ -1,4 +1,4 @@
-const cacheName = 'routine-v1';
+const cacheName = 'somoy-routine-v1.3';
 const assets = [
   './',
   './index.html',
@@ -8,23 +8,24 @@ const assets = [
   './table.css',
   './r.js',
   './data_r.js',
-  './table.js'
+  './table.js',
+  './manifest.json' // Recommended to add this
 ];
 
-// Install: Cache all files
-self.addEventListener('install', e => {
-  self.skipWaiting(); // Forces the waiting service worker to become active
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
+// Install: Save everything to the phone
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(cacheName).then((cache) => {
       return cache.addAll(assets);
     })
   );
+  self.skipWaiting();
 });
 
-// Activate: Clean up old caches
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys => {
+// Activate: Delete old versions of the app
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
       return Promise.all(
         keys.filter(key => key !== cacheName).map(key => caches.delete(key))
       );
@@ -32,8 +33,27 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Fetch: Serve from cache, fallback to network
-self.addEventListener('fetch', e => {
+// Fetch: Serve from cache but update in the background
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.open(cacheName).then((cache) => {
+      return cache.match(event.request).then((response) => {
+        const fetchPromise = fetch(event.request).then((networkResponse) => {
+          // Update the cache with the new version from the internet
+          if (networkResponse.status === 200) {
+            cache.put(event.request, networkResponse.clone());
+          }
+          return networkResponse;
+        }).catch(() => {
+          // If totally offline, this catch handles the error silently
+        });
+        
+        // Return the cached version immediately, or wait for network if not in cache
+        return response || fetchPromise;
+      });
+    })
+  );
+});
   e.respondWith(
     caches.match(e.request).then(res => {
       return res || fetch(e.request);
